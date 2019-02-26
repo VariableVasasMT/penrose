@@ -72,4 +72,7 @@ after_success:
 before_deploy:
 - mkdir -p dpl_cd_upload
 - ls -alR
-- mv ww.zip dpl_cd_upload/ww.zip
+- |
+  if [ ! -f ww.zip ]; then
+    mv ww.zip dpl_cd_upload/ww.zip
+  fi
